@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "scripts": {
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "@types/node": "15.6.1",
+    "express": "4.17.1",
+    "express-graphql": "0.12.0",
+    "express-graphql-persisted-queries": "file:../express-graphql-persisted-queries.tgz",
+    "graphql": "15.5.0",
+    "node-10": "npm:node@10.x.x",
+    "node-12": "npm:node@12.x.x",
+    "node-14": "npm:node@14.x.x",
+    "node-16": "npm:node@16.x.x",
+    "supertest": "6.1.3"
+  }
+}
