@@ -1388,7 +1388,7 @@ function runTests(createApp: () => App): void {
       app.post(endpoint(), persistedQueries({ queryMap }), graphqlHTTP({ schema }));
 
       // eslint-disable-next-line @typescript-eslint/no-magic-numbers
-      const body = Buffer.alloc(100 * UNIT_KIB + 1, 'a').toString();
+      const body = Buffer.alloc(100 * UNIT_KIB + 1, 'I ♥ GraphQL').toString();
 
       const response = await request(app).post(endpoint()).type('json').send(body);
 
@@ -1408,7 +1408,7 @@ function runTests(createApp: () => App): void {
       app.post(endpoint(), persistedQueries({ queryMap }), graphqlHTTP({ schema }));
 
       // eslint-disable-next-line @typescript-eslint/no-magic-numbers
-      const body = Buffer.alloc(100 * UNIT_KIB, 'a').toString();
+      const body = Buffer.alloc(100 * UNIT_KIB, 'I ♥ GraphQL').toString();
 
       const response = await request(app).post(endpoint()).type('json').send(body);
 
