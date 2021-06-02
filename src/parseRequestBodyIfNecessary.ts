@@ -62,9 +62,9 @@ async function readRawBody(req: Request, contentTypeInfo: ParsedMediaType): Prom
   const stream = getStreamFromRequest(req, encoding);
 
   try {
-    const body = await getStream(stream, { encoding: charset, maxBuffer });
+    const bodyBuffer = await getStream.buffer(stream, { maxBuffer });
 
-    return body;
+    return bodyBuffer.toString(charset);
   } catch (unknownError: unknown) {
     /* istanbul ignore else: cannot make get-stream throw other error. */
     if (unknownError instanceof MaxBufferError) {
