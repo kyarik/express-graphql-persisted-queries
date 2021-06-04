@@ -14,6 +14,7 @@ import type { Server as Restify } from 'restify';
 import request from 'supertest';
 import { deflateSync, gzipSync } from 'zlib';
 import { persistedQueries } from '..';
+import { assert } from '../assert';
 import {
   CONTENT_TYPE_JSON,
   HTTP_STATUS_BAD_REQUEST,
@@ -1388,9 +1389,16 @@ function runTests(createApp: () => App): void {
       app.post(endpoint(), persistedQueries({ queryMap }), graphqlHTTP({ schema }));
 
       // eslint-disable-next-line @typescript-eslint/no-magic-numbers
-      const body = Buffer.alloc(100 * UNIT_KIB + 1, 'I ♥ GraphQL').toString();
+      const byteLength = 100 * UNIT_KIB + 1;
+      const body = Buffer.alloc(
+        byteLength,
+        'queryId=greetGuest&description=I love GraphQL',
+      ).toString();
 
-      const response = await request(app).post(endpoint()).type('json').send(body);
+      // eslint-disable-next-line @typescript-eslint/no-magic-numbers
+      assert(body.length === byteLength, 'String length needs to equal byte length');
+
+      const response = await request(app).post(endpoint()).send(body);
 
       expect(response.status).toBe(HTTP_STATUS_PAYLOAD_TOO_LARGE);
       expect(response.body).toStrictEqual({
@@ -1408,15 +1416,47 @@ function runTests(createApp: () => App): void {
       app.post(endpoint(), persistedQueries({ queryMap }), graphqlHTTP({ schema }));
 
       // eslint-disable-next-line @typescript-eslint/no-magic-numbers
-      const body = Buffer.alloc(100 * UNIT_KIB, 'I ♥ GraphQL').toString();
+      const byteLength = 100 * UNIT_KIB;
+      const body = Buffer.alloc(
+        byteLength,
+        'queryId=greetGuest&description=I love GraphQL',
+      ).toString();
 
-      const response = await request(app).post(endpoint()).type('json').send(body);
+      // eslint-disable-next-line @typescript-eslint/no-magic-numbers
+      assert(body.length === byteLength, 'String length needs to equal byte length');
 
-      expect(response.status).toBe(HTTP_STATUS_BAD_REQUEST);
+      const response = await request(app).post(endpoint()).send(body);
+
+      expect(response.status).toBe(HTTP_STATUS_OK);
+      expect(response.body).toStrictEqual({
+        data: {
+          greet: 'Hello guest!',
+        },
+      });
+    });
+
+    it('takes into account the body byte length, not string length', async () => {
+      const app = createApp();
+
+      app.post(endpoint(), persistedQueries({ queryMap }), graphqlHTTP({ schema }));
+
+      // eslint-disable-next-line @typescript-eslint/no-magic-numbers
+      const byteLength = 100 * UNIT_KIB + 1;
+      const body = Buffer.alloc(
+        byteLength,
+        'queryId=greetGuest&description=I ♥ GraphQL',
+      ).toString();
+
+      // eslint-disable-next-line @typescript-eslint/no-magic-numbers
+      assert(body.length < byteLength, 'String length needs to be less than byte length');
+
+      const response = await request(app).post(endpoint()).send(body);
+
+      expect(response.status).toBe(HTTP_STATUS_PAYLOAD_TOO_LARGE);
       expect(response.body).toStrictEqual({
         errors: [
           {
-            message: 'Request body is not a valid JSON object.',
+            message: 'Request body too large.',
           },
         ],
       });
