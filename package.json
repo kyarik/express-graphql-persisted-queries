@@ -48,7 +48,7 @@
     "prettier": "prettier --write --list-different .",
     "prettier:check": "prettier --check .",
     "preversion": ". ./checkBranch.sh && npm ci",
-    "release": "standard-version",
+    "release": ". ./checkBranch.sh && standard-version",
     "start": "jest --watch src",
     "test:coverage": "jest --coverage src",
     "test:integration": "jest integration-tests/index.test.ts",
