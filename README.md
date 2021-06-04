@@ -1,5 +1,9 @@
 # A Middleware for Persisted Queries with express-graphql
 
+[![Code Coverage Status](https://codecov.io/gh/kyarik/express-graphql-persisted-queries/branch/main/graph/badge.svg?token=ct9Fb3Z9Pw)](https://codecov.io/gh/kyarik/express-graphql-persisted-queries)
+[![CI Build Status](https://github.com/kyarik/express-graphql-persisted-queries/workflows/CI/badge.svg?branch=main)](https://github.com/kyarik/express-graphql-persisted-queries/actions?query=branch%3Amain)
+[![npm version](https://badge.fury.io/js/express-graphql-persisted-queries.svg)](https://badge.fury.io/js/express-graphql-persisted-queries)
+
 `express-graphql-persisted-queries` is an HTTP server middleware for persisted queries designed to work with [`express-graphql`](https://github.com/graphql/express-graphql).
 
 `express-graphql-persisted-queries` gives you a lot of flexibility by allowing you to specify a custom query ID key, a custom way to map a query ID to an actual query, and whether you want to allow only persisted queries for enhanced security.
