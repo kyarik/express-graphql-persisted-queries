@@ -11,10 +11,11 @@ import { isObject, isString, nonNull } from './typeguards';
 import type { Middleware, Options } from './types';
 
 /**
- * Creates an Express middleware that adds support for persisted queries. This
- * middleware should be specified before `graphqlHTTP` from `express-graphql`.
+ * Creates a middleware that adds support for persisted queries to your GraphQL
+ * HTTP server. This middleware should be specified before `graphqlHTTP` from
+ * `express-graphql`.
  * @param options Options to customize the middleware behavior.
- * @returns An Express middleware.
+ * @returns An HTTP server middleware.
  * @example
  * app.use('/graphql', persistedQueries({ queryMap }), graphqlHTTP({ schema }));
  */
