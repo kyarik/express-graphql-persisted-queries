@@ -1,6 +1,6 @@
 {
   "name": "express-graphql-persisted-queries",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A Middleware for Persisted Queries with express-graphql",
   "author": "Yaroslav Kukytsyak",
   "license": "MIT",
