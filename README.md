@@ -103,9 +103,9 @@ app.use(
 
 ## Contributing
 
-Pull requests are very welcome. If you intend to introduce a major change, please open a related issue first in which we can discuss what you would like to change.
+Your contributions are very welcome! To get started, read our [contributing guidelines](https://github.com/kyarik/express-graphql-persisted-queries/blob/main/CONTRIBUTING.md).
 
-Please make sure to update the tests and the README as appropriate.
+Also check out existing issues labeled as <kbd>[help wanted](https://github.com/kyarik/express-graphql-persisted-queries/labels/help%20wanted)</kbd> or <kbd>[good first issue](https://github.com/kyarik/express-graphql-persisted-queries/labels/good%20first%20issue)</kbd>.
 
 ## License
 
