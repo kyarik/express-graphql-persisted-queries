@@ -1,13 +1,5 @@
 **Pull request type**
-
-- [ ] Bug fix
-- [ ] Feature
-- [ ] Code style update
-- [ ] Refactoring (no functional changes and no API changes)
-- [ ] Build related changes
-- [ ] CI related changes
-- [ ] Documentation content changes
-- [ ] Other:
+Bug fix, Feature, Code style update, Refactoring (no functional changes and no API changes), Build related changes, CI related changes, Documentation changes, Other
 
 **Describe the current behavior**
 ...
@@ -19,9 +11,7 @@
 Resolves #
 
 **Is this a breaking change?**
-
-- [ ] Yes
-- [ ] No
+Yes/No
 
 **Additional information**
 ...
