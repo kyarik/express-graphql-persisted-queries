@@ -35,7 +35,7 @@ If you want to implement a new feature, here's what you should do:
 
 If you want to create an issue, you should first search the [existing open/close issues](https://github.com/kyarik/express-graphql-persisted-queries/issues) to see if there's already an issue for the problem you have or the feature you want to request. In that case, you can read the discussion and contribute to it.
 
-Once you checked that there is no existing issue for your problem or feature request, you can create an issue by [filling this form](https://github.com/kyarik/express-graphql-persisted-queries/issues/new).
+Once you checked that there is no existing issue for your problem or feature request, you can create an issue by [filling this form](https://github.com/kyarik/express-graphql-persisted-queries/issues/new/choose).
 
 ## Creating a pull request
 
