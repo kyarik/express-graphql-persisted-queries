@@ -6,6 +6,7 @@
   "dependencies": {
     "@types/node": "15.6.1",
     "express-graphql-persisted-queries": "file:../express-graphql-persisted-queries.tgz",
+    "graphql": "15.5.1",
     "typescript-3.4": "npm:typescript@3.4.x",
     "typescript-3.5": "npm:typescript@3.5.x",
     "typescript-3.6": "npm:typescript@3.6.x",
