@@ -1395,7 +1395,6 @@ function runTests(createApp: () => App): void {
         'queryId=greetGuest&description=I love GraphQL',
       ).toString();
 
-      // eslint-disable-next-line @typescript-eslint/no-magic-numbers
       assert(body.length === byteLength, 'String length needs to equal byte length');
 
       const response = await request(app).post(endpoint()).send(body);
@@ -1422,7 +1421,6 @@ function runTests(createApp: () => App): void {
         'queryId=greetGuest&description=I love GraphQL',
       ).toString();
 
-      // eslint-disable-next-line @typescript-eslint/no-magic-numbers
       assert(body.length === byteLength, 'String length needs to equal byte length');
 
       const response = await request(app).post(endpoint()).send(body);
@@ -1447,7 +1445,6 @@ function runTests(createApp: () => App): void {
         'queryId=greetGuest&description=I ♥ GraphQL',
       ).toString();
 
-      // eslint-disable-next-line @typescript-eslint/no-magic-numbers
       assert(body.length < byteLength, 'String length needs to be less than byte length');
 
       const response = await request(app).post(endpoint()).send(body);

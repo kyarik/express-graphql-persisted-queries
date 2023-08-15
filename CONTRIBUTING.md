@@ -90,6 +90,7 @@ Commit messages should follow the [Conventional Commits specification](https://w
 The allowed commit types are based on [the Angular convention](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines):
 
 - **build**: Changes that affect the build system or dependencies
+- **chore**: Changes that do not belong to any of the other types, like changing GitHub issue/PR templates
 - **ci**: Changes to our CI configuration files and scripts
 - **docs**: Documentation only changes
 - **feat**: A new feature

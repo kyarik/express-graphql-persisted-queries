@@ -13,9 +13,9 @@ export interface Request extends IncomingMessage {
 
 export type Response = ServerResponse;
 
-export type NextFn = (param?: unknown) => void;
+export type NextFn = (param?: unknown) => unknown;
 
-export type Middleware = (req: Request, res: Response, next: NextFn) => void;
+export type Middleware = (req: Request, res: Response, next: NextFn) => unknown;
 
 export type QueryMapFn = (queryId: string) => PromiseOrValue<Maybe<string>>;
 
